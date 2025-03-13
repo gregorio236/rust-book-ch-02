@@ -13,7 +13,13 @@ fn main() {
 
         stdin().read_line(&mut guess).expect("Failed to read line!");
 
-        let guess: i32 = guess.trim().parse().expect("Please type a number!");
+        let guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                print!("Please type a number!");
+                continue;
+            }
+        };
 
         println!("You guessed: {guess}");
 
