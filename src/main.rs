@@ -7,8 +7,6 @@ fn main() {
 
     let secret_number = random_range(1..=100);
 
-    println!("The secret number is: {secret_number}");
-
     println!("Please input your guess.");
 
     loop {
